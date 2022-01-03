@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AcitivityRecognition</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        label {
+        display: inline-block;
+        width: 150px;
+        text-align:start;
+        font-size: medium;
+        }
+
+        input[type=text], select {
+          width: 80%;
+          padding: 1px 20px;
+          margin: 2px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 1px;
+          box-sizing: border-box;
+        }
+
+        input[type=submit] {
+          width: 80%;
+          background-color: #494949;
+          color: white;
+          padding: 1px 0px;
+          margin: 1px 0;
+          border: none;
+          border-radius: 1px;
+          cursor: pointer;
+          align-items: Left;
+
+        }
+
+        input[type=submit]:hover {
+          background-color: #b9b6b6;
+        }
+
+        div {
+          border-radius: 0px;
+          background-color: #dddcdc;
+          padding: 20px;
+        }
+
+        h2 {text-align: center; color: black}
+        </style>
+
+
+</head>
+
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Activity Recognition</a>
+    </div>
+    <ul class="nav navbar-nav navbar navbar-dark bg-dark">
+      <li class="active"><a href="https://github.com/jsjosan3?tab=repositories">GitHub</a></li>
+      <li class=" active dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Authors <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="https://www.linkedin.com/in/lovepreet-singh-189593154/">Lovepreet Singh</a></li>
+        </ul>
+      </li>
+          </ul>
+  </div>
+</nav>
+    <section class="testimonials text-center">
+		<div class="container-fluid">
+			<h4 class="my-4 title">Activity Recognition System</h4>
+			<div class="col-auto">
+				<div class="col-xl-12">
+                    <form action="/predict" method="POST">
+                        <label>avg_rss12</label>
+                        <input type="text" name="avg_rss12">
+                        <br>
+                        <label>var_rss12</label>
+                        <input type="text" name="var_rss12">
+                        <br>
+                        <label>avg_rss13</label>
+                        <input type="text" name="avg_rss13">
+                        <br>
+                        <label>var_rss13</label>
+                        <input type="text" name="var_rss13">
+                        <br>
+                        <label>avg_rss23</label>
+                        <input type="text" name="avg_rss23">
+                        <br>
+                        <label>var_rss23</label>
+                        <input type="text" name="var_rss23">
+                        <br>
+                        <a><input type="submit" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="res-container  row-cols-md-12 col-xs-12">
+            <div class="result-box shadow rounded-lg">
+                <h2> {{prediction_text}} </h2>
+            </div>
+        </div>
+    </section>
+
+
+
+</body>
+</html>
